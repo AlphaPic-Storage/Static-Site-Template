@@ -3,26 +3,28 @@ import { Container, createStyles, makeStyles, Theme, useTheme } from '@material-
 import DisplayCard                                              from './components/card'
 import * as config                                              from './config'
 import Footer                                                   from './components/footer'
+import NavBar                                                   from './components/navbar'
 
-const useStyles = makeStyles((theme:Theme) => createStyles({
+const useStyles = makeStyles( ( theme: Theme ) => createStyles( {
 	root: {
 		marginTop: "10vh",
+		marginBottom: theme.spacing( 1 )
 	}
-}))
+} ) )
 
-export default function App() {
-	const classes = useStyles(useTheme());
+export default function App () {
+	const classes = useStyles( useTheme() );
 	document.title = config.SiteName;
 	
 	return (
 		<>
 			<header>
-			
+				<NavBar/>
 			</header>
 			<Container component={"main"} className={classes.root} maxWidth={"sm"}>
-				<DisplayCard />
-				<Footer/>
+				<DisplayCard/>
 			</Container>
+			<Footer/>
 		</>
 	)
 }

@@ -1,35 +1,38 @@
-import React                                                                    from 'react'
-import { createStyles, Divider, Link, makeStyles, Theme, Typography, useTheme } from '@material-ui/core'
-import * as config                                                              from "../../config"
-import dayjs                                                                    from 'dayjs'
-import classNames                                                               from 'classnames'
+import React                                                                from 'react'
+import { Box, createStyles, Link, makeStyles, Theme, Typography, useTheme } from '@material-ui/core'
+import * as config                                                          from "../../config"
+import dayjs                                                                from 'dayjs'
+import classNames                                                           from 'classnames'
 
-const useStyles = makeStyles((theme:Theme)=>createStyles({
+const useStyles = makeStyles( ( theme: Theme ) => createStyles( {
 	footer: {
+		marginTop: theme.spacing( 1 )
+	},
+	text: {
 		textAlign: "center",
-		marginBottom: theme.spacing(1),
+		marginBottom: theme.spacing( 0.5 ),
 		fontWeight: 400,
-		marginTop: theme.spacing(1)
+		marginTop: theme.spacing( 0.5 ),
 	},
 	copyright: {
 		fontSize: 8,
 		textDecoration: "none"
 	}
-}))
+} ) )
 
-export default function Footer() {
+export default function Footer () {
 	const theme = useTheme();
-	const classes = useStyles(theme);
+	const classes = useStyles( theme );
 	
-	let timeDisplay:string = ""+dayjs().year();
-	if(dayjs().year() > 2021) {
-		timeDisplay = timeDisplay+" - "+dayjs().year();
+	let timeDisplay: string = "" + dayjs().year();
+	if ( dayjs().year() > 2021 ) {
+		timeDisplay = timeDisplay + " - " + dayjs().year();
 	}
 	
 	return (
-		<div id={"footer"}>
-			<Typography component={"p"} variant={'body2'} className={classes.footer}>
-				{"Copyright © "+timeDisplay+" "}
+		<Box id={"footer"} component={"footer"} className={"footer"}>
+			<Typography component={"p"} variant={'body2'} className={classes.text}>
+				{"Copyright © " + timeDisplay + " "}
 				<Link
 					href={config.Author.site}
 					target={"_self"}
@@ -41,12 +44,13 @@ export default function Footer() {
 				</Link>
 				{" All Right Reserved"}
 			</Typography>
-			<Typography component={"p"} variant={'body2'} className={classNames(classes.footer,classes.copyright)}>
+			<Typography component={"p"} variant={'body2'} className={classNames( classes.text, classes.copyright )}>
 				{"Powered by "}
-				<Link href={"https://github.com/AlphaPic-Storage/Static-Site-Template"} target={"_blank"} color={'inherit'}>
+				<Link href={"https://github.com/AlphaPic-Storage/Static-Site-Template"} target={"_blank"}
+				      color={'inherit'}>
 					{"AlphaPic-Storage/Static-Site-Template"}
 				</Link>
 			</Typography>
-		</div>
+		</Box>
 	)
 }

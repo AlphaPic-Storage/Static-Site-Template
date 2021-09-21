@@ -14,5 +14,7 @@ export const Describe = "一个静态网页"
  */
 export const Author = {
 	name: "AlphaPic",
-	site: "https://www.alphapic.org.cn" //也可使用mailto
+	site: "https://www.alphapic.org.cn", //也可使用mailto
+	homepage: "https://www.alphapic.org.cn",
+	github: "AlphaPic-Storage"
 }
