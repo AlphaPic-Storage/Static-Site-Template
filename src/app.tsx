@@ -14,7 +14,7 @@ const useStyles = makeStyles( ( theme: Theme ) => createStyles( {
 
 export default function App () {
 	const classes = useStyles( useTheme() );
-	document.title = config.SiteName;
+	document.title = config.SiteName+" - "+config.Author.name;
 	
 	return (
 		<>
