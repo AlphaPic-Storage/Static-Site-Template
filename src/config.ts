@@ -18,3 +18,9 @@ export const Author = {
 	homepage: "https://www.alphapic.org.cn",
 	github: "AlphaPic-Storage"
 }
+
+/**
+ * 备案号
+ * 自动链接至beian.miit.gov.cn
+ */
+export const Beian = "京ICP备20000000号"

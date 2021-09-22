@@ -3,6 +3,7 @@ import { Box, createStyles, Link, makeStyles, Theme, Typography, useTheme } from
 import * as config                                                          from "../../config"
 import dayjs                                                                from 'dayjs'
 import classNames                                                           from 'classnames'
+import BeianText                                                            from './beian'
 
 const useStyles = makeStyles( ( theme: Theme ) => createStyles( {
 	footer: {
@@ -31,6 +32,7 @@ export default function Footer () {
 	
 	return (
 		<Box id={"footer"} component={"footer"} className={"footer"}>
+			<BeianText num={config.Beian} />
 			<Typography component={"p"} variant={'body2'} className={classes.text}>
 				{"Copyright © " + timeDisplay + " "}
 				<Link
